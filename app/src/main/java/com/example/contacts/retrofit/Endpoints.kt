@@ -2,8 +2,7 @@ package com.example.contacts.retrofit
 
 import com.example.contacts.Model.Contacts
 import retrofit2.Call
-import retrofit2.http.GET
-import retrofit2.http.Query
+import retrofit2.http.*
 
 
 interface Endpoints {
@@ -14,9 +13,12 @@ interface Endpoints {
 
 
 
-    @GET("api/contact/addcontact")
+    @POST("api/contact/addcontact")
     fun putContact(
-        @Query("sources") newsSource: String,
-        @Query("apiKey") apiKey: String
-    ): Call<List<Contacts>>
+
+    ): Call<Contacts>
+
+
+    @DELETE("api/contact/addcontact/{id}")
+    fun deleteContact(@Path("id") id:Int):Call<Contacts>
 }

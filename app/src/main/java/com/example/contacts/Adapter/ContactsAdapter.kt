@@ -33,9 +33,9 @@ class ContactsAdapter (): RecyclerView.Adapter<ContactsAdapter.NoteHolder>() {
         val currentNote = notes[position]
         holder.textViewTitle.text = currentNote.name.toString()
         holder.textViewDescription.text = currentNote.number.toString()
-//        holder.imageview.setOnClickListener {
-//            ( context as MainActivity).click(notes.get(position));
-//        }
+        holder.imageview.setOnClickListener {
+            ( context as MainActivity).click(notes.get(position).contactId);
+        }
 
 
 

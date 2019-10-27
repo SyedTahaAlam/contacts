@@ -10,6 +10,12 @@ interface Endpoints {
 
     @GET("api/contact/addcontact")
     fun getContacts(
+    ): Call<List<Contacts>>
+
+
+
+    @GET("api/contact/addcontact")
+    fun putContact(
         @Query("sources") newsSource: String,
         @Query("apiKey") apiKey: String
     ): Call<List<Contacts>>

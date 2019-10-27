@@ -9,7 +9,7 @@ data class Contacts(
     var contactId: kotlin.Int,
     @Expose
     @SerializedName("name")
-    var name: Int,
+    var name: String,
     @Expose
     @SerializedName("number")
     val number: Int

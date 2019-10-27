@@ -5,17 +5,17 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class retrofit{
     companion object{
-        lateinit var retrofit: Retrofit
+         var endpoint: Retrofit?=null
 
 
-       fun  getInstance():Retrofit{
-           if(retrofit==null){
-              retrofit= Retrofit.Builder()
+       fun  getInstance():Retrofit?{
+           if(endpoint==null){
+              endpoint= Retrofit.Builder()
                    .baseUrl("http://5db576ae4e41670014ef2963.mockapi.io/")
                    .addConverterFactory(GsonConverterFactory.create())
                    .build()
            }
-           return retrofit
+           return endpoint
        }
     }
 }

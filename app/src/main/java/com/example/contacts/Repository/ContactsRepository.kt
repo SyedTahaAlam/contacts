@@ -9,7 +9,7 @@ import com.example.contacts.retrofit.retrofit
 import retrofit2.*
 
 class ContactsRepository{
-    var ContactsEndPoint :Endpoints=retrofit.getInstance().create(Endpoints::class.java)
+    var ContactsEndPoint :Endpoints=retrofit.getInstance()!!.create(Endpoints::class.java)
 
 
     fun getContacts():LiveData<List<Contacts>>{
